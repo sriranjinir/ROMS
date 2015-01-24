@@ -1,0 +1,37 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-6"><h3 class="panel-title">Restaurants</h3></div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--<div ng-show="Submitted.supplierProduct && !model.product.supplierProduct">-->
+                <!--<alert class="fade in" type="danger" close="closeAlert($index)">-->
+                    <!--Select a Supplier Product-->
+                <!--</alert>-->
+            <!--</div>-->
+            <table ng-table="model.restaurants.tableParams" show-filter="true" class="table table-striped table-hover">
+                <tbody>
+                <tr ng-repeat="record in $data" id="{{record.id}}"
+                    ng-click="select(record.id)"
+                    class="pointer">
+                    <td data-title="'Restaurant ID'" sortable="'supplierId'" filter="{'id': 'text'}">{{record.id | characters: 25}}</td>
+                    <td data-title="'Name'" sortable="'name'" filter="{'name': 'text'}">{{record.name | characters: 25}}</td>
+                    <td data-title="'locality'" sortable="'locality'" filter="{'locality': 'text'}">{{record.locality | characters: 25}}</td>
+                    <td data-title="'city'" sortable="'city'" filter="{'city': 'text'}">{{record.city | characters: 25}}</td>
+                    <td data-title="'state'" sortable="'state'" filter="{'state': 'text'}">{{record.state | characters: 25}}</td>
+                    <!--<td data-title="'Denomination'" sortable="'denomination'" filter="{'denomination': 'text'}">{{record.denomination | currency | characters: 25}}</td>-->
+                    <td data-title="''" filter="{ 'dummy': 'clear' }">&nbsp;</td>
+                    <!--<td data-title="''" >-->
+                        <!--<span ng-if="isSelected(record.id)" class="label label-success status-text">Selected</span>-->
+                    <!--</td>-->
+                </tr>
+                <tr ng-if="$data.length === 0">
+                    <td colspan="13" class="no-data">No Restaurants to display</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
