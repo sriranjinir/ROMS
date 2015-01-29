@@ -1,0 +1,151 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title> Restaurant Order Management System</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="resources/css/main.css"/>
+    <link rel="stylesheet" href="resources/vendors/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="resources/vendors/ng-table/ng-table.css" />
+
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <!-- endbuild -->
+</head>
+<body  ng-app="AngularSpringApp">
+
+<script src="resources/vendors/jquery/jquery.js"></script>
+<script src="resources/vendors/bootstrap/js/bootstrap.js"></script>
+<script src="resources/js/lib/angular/angular.js"></script>
+<script src="resources/js/lib/angular/angular-ui-router.js"></script>
+<script src="resources/vendors/ng-table/ng-table.js"></script>
+<script src="resources/js/app.js"></script>
+<script src="resources/js/services.js"></script>
+<script src="resources/js/controllers/RailwayStationController.js"></script>
+<script src="resources/js/controllers/CarController.js"></script>
+<script src="resources/js/controllers/TrainController.js"></script>
+<script src="resources/js/filters.js"></script>
+<script src="resources/js/directives.js"></script>
+
+
+<!--[if lt IE 9]>
+<!--<script src="bower_components/es5-shim/es5-shim.js"></script>-->
+<!--<script src="bower_components/json3/lib/json3.min.js"></script>-->
+<![endif]-->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<!--<script src="resources/jquery/jquery.js"></script>-->
+<!--<script src="bower_components/angular/angular.js"></script>-->
+<!--<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+<script src="resources/js/lib/angular/angular-resource.js"></script>
+<script src="resources/js/lib/angular/angular-cookies.js"></script>
+<!--<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>-->
+<!--<script src="bower_components/angular-route/angular-route.js"></script>-->
+<!--<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>-->
+<!--<script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>-->
+<!--<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>-->
+<!--<script src="bower_components/angular-ui-sortable/sortable.js"></script>-->
+<script src="resources/vendors/lodash/lodash.js"></script>
+<!--<script src="bower_components/ng-table/dist/ng-table.min.js"></script>-->
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<!--<script src="scripts/app.js"></script>-->
+<!--<script src="scripts/controllers/main.js"></script>-->
+<!-- endbuild -->
+<!--<div id="logo-swipe" style="left: 0px;"></div>-->
+<div id="content-wrapper">
+    <div class="header navbar">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Logo -->
+                <div >
+                    <!--<a href="/"><img src="images/logo.png"></a>-->
+                    <h1><a href="index.html">Order Food & Enjoy</a></h1>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="navbar navbar-inverse" role="banner">
+                    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right"
+                         role="navigation" >
+                        <!--ng-controller="authenticatedUserController">-->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a id="userMenu" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span id="username"></span><b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu animated fadeInUp">
+                                    <li>
+                                        <form id="logoutForm" action="/logout" method="post">
+                                            <button id="logout" class="text" type="submit">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="sidebar content-box" style="display: block;">
+                    <ul class="nav">
+                        <!-- Main menu -->
+                        <li><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                        <li class="submenu">
+                            <a href="#" id="retailerAccord" expandable-menu-item>
+                                <i class="glyphicon glyphicon-glass"></i> Restaurants
+                                <span class="caret pull-right"></span>
+                            </a>
+                            <!-- Sub menu -->
+                            <ul>
+                                <li><a id="retailerLink" href="#/restaurants">Restaurant Details</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#" id="productAccord" expandable-menu-item>
+                                <i class="glyphicon glyphicon-shopping-cart"></i> Order
+                                <span class="caret pull-right"></span>
+                            </a>
+                            <!-- Sub menu -->
+                            <ul>
+                                <li><a id="productsLink" href="#/product">New Order</a></li>
+                                <li><a id="createProductLink" href="#/product-create/select-supplier-product">Order History</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div ncy-breadcrumb></div>
+                <div ng-if="loaded === true" class="alert-block">
+                    <alert class="fade in" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{ alert.message }}</alert>
+                </div>
+                <!-- Add your site or application content here -->
+                <div class="container" ui-view=""></div>
+                <!--<div ui-view></div>-->
+            </div>
+        </div>
+        <input ng-if="loaded === true" type="hidden" id="pageStatus" value="ready"/>
+    </div>
+</div>
+
+
+</body>
+</html>
+
