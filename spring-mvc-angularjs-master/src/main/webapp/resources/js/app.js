@@ -11,12 +11,12 @@ App.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider, $
         .state('home', {
             url: '/home',
             templateUrl: 'cars/layout.html',
-            controller: 'CarController',
+            controller: 'RestaurantController',
             pageId: 'something'
         })
         .state('restaurants', {
             url: '/restaurants',
-            templateUrl: 'cars/layout.html',
+            templateUrl: 'trains/layout.html',
             controller: 'RestaurantCtrl',
             pageId: 'something1'
         });
