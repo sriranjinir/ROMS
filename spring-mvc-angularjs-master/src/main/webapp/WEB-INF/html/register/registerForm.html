@@ -1,0 +1,27 @@
+<div class="page-content container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-wrapper">
+                <div class="box">
+                    <div class="content-wrap">
+                        <div style="align:left;"><img src="images/logo_verbose.png"></div>
+                        <h6>Login</h6>
+
+                        <div id="loginMessage" class="help-block">Login was unsuccessful</div>
+                        <div id="logoutMessage" class="help-block">Logout was successful</div>
+
+                        <form name="f" method="post" class="form-signin" action="/login/process">
+                            <input id="username" name="username" class="form-control" type="text" placeholder="Email"
+                                   required autofocus>
+
+                            <input id="password" name="password" class="form-control" type="password"
+                                   placeholder="Password" required>
+
+                            <button id="loginButton" class="btn btn-lg btn-warning btn-block" type="submit">LOGIN</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

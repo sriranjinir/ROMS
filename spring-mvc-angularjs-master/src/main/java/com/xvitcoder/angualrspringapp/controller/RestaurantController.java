@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/cars")
-public class CarController {
+@RequestMapping("/restaurants")
+public class RestaurantController {
 
     @Autowired 
     private CarService carService;
@@ -23,7 +23,7 @@ public class CarController {
     private RestaurantService restaurantService;
     
 
-    @RequestMapping("/carlist.json")
+    @RequestMapping("/restaurantlist.json")
     public @ResponseBody List<Restaurant> getCarList() {
         return restaurantService.findAllRestaurants();
 //        return carService.getAllCars();
@@ -46,6 +46,6 @@ public class CarController {
 
     @RequestMapping("/layout")
     public String getCarPartialPage() {
-        return "cars/layout";
+        return "restaurants/layout";
     }
 }

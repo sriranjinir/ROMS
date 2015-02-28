@@ -1,0 +1,38 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-6"><h3 class="panel-title">Restaurants</h3></div>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <table ng-table="tableParams" show-filter="true" class="table table-striped table-hover">
+                <tbody>
+                <tr ng-repeat="prd in $data"
+                    class="pointer viewableProduct">
+                    <!--<td data-title="'ID'" header-class="text-left" sortable="'id'" filter="{'id': 'text'}">{{prd.id}}</td>-->
+                    <td data-title="'Name'" header-class="text-left" sortable="'name'" filter="{'name': 'text'}"> {{prd.name}}</td>
+                    <td data-title="'locality'" header-class="text-left" sortable="'locality'" filter="{'locality': 'text'}">{{prd.locality}}</td>
+                    <td data-title="'City'"  header-class="text-left" sortable="'city'">{{prd.city}}</td>
+                    <!--<td data-title="'State'" header-class="text-left" sortable="'state'" filter="{'state': 'text'}">{{prd.state}}</td>-->
+                    <td data-title="'Cuisine'" header-class="text-left" sortable="'cuisine'" filter="{'cuisine': 'select'}" filter-data="cuisines($column)">{{prd.cuisine}}</td>
+                    <td data-title="''" header-class="text-left" filter="{ 'dummy': 'clearFilter' }">
+
+                    </td>
+                </tr>
+                <!--<tr ng-if="$data.length === 0">-->
+                    <!--<td colspan="8" class="no-data">No Restaurants to display</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+
+            <script type="text/ng-template" id="ng-table/filters/clearFilter.html">
+                <button type="button" class="btn btn-default btn-sml btn-table-clear-filters" ng-click="clearFilters()">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                </button>
+            </script>
+
+        </div>
+    </div>
+</div>
