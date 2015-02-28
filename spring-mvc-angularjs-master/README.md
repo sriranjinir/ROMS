@@ -1,5 +1,3 @@
-spring-mvc-angularjs
-====================
 
 A simple application to demonstrate how to configure angularjs with Spring MVC
 
@@ -12,5 +10,3 @@ I also included the bootstrap library for a better UI.
 RUN: 
 
 mvn tomcat:run
-
-Then open the URL: http://localhost:8080/AngularSpringApp
