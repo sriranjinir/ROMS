@@ -10,9 +10,8 @@ App.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider, $
     $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: 'restaurants/layout.html',
-            controller: 'RestaurantController',
-            pageId: 'something'
+//            templateUrl: '/home',
+            pageId: 'home'
         })
         .state('login', {
             url: '/login',
@@ -21,9 +20,9 @@ App.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider, $
         })
         .state('restaurants', {
             url: '/restaurants',
-            templateUrl: 'trains/layout.html',
-            controller: 'RestaurantCtrl',
-            pageId: 'something1'
+            templateUrl: 'restaurants/layout.html',
+            controller: 'RestaurantController',
+            pageId: 'restaurantPage'
         })
         .state('register', {
             url: '/register',
@@ -31,8 +30,10 @@ App.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider, $
             pageId: 'registerPage'
         })
         .state('orders', {
+            abstract:true,
             url: '/orders',
             templateUrl: 'orders/layout',
+            controller: 'OrdersController',
             pageId: 'orderCreatePage'
         })
         // nested states
@@ -47,13 +48,15 @@ App.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider, $
         // url will be /form/interests
         .state('orders.selectItems', {
             url: '/selectItems',
-            templateUrl: 'orders/selectItems.html'
+            templateUrl: 'orders/selectItems.html',
+            controller: 'MenuController'
+        })
+
+        // url will be /form/payment
+        .state('orders.previewInvoice', {
+            url: '/previewInvoice',
+            templateUrl: 'orders/previewInvoice.html',
+            controller: 'InvoiceController'
         });
-//
-//        // url will be /form/payment
-//        .state('form.payment', {
-//            url: '/payment',
-//            templateUrl: 'form-payment.html'
-//        });
 
 }]);

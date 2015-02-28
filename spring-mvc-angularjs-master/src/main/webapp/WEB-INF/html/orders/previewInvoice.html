@@ -11,9 +11,13 @@
             <td data-title="'Price'" header-class="text-left">
                 <span class="fa fa-inr"></span>
                 {{prd.price}}</td>
+            <td data-title="'Total'"  header-class="text-left">
+                <span class="fa fa-inr"></span>
+                {{prd.quantity* prd.price}}</td>
+
         </tr>
         <tr>
-            <td colspan="2" style="text-align:right;font-weight:bold;">
+            <td colspan="3" style="text-align:right;font-weight:bold;">
                 Total:
             </td>
             <td style="font-weight:bold;">

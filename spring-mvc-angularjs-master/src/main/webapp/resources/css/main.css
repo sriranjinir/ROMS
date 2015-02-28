@@ -30,18 +30,6 @@ body {
     margin-top: 30px;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    background-color:#00805e;
-    box-shadow:inset 0px 0px 3px #111;
-    color:#fff;
-    font-size:14px;
-    height:60px;
-    padding:10px 0px;
-    width:100%;
-}
-
 footer a{
     color:#eee;
     text-decoration:none;
@@ -52,6 +40,18 @@ footer a:hover{
     color:#aaa;
     text-decoration:none;
     border:0px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color:#00805e;
+    box-shadow:inset 0px 0px 3px #111;
+    color:#fff;
+    font-size:14px;
+    height:60px;
+    padding:10px 0px;
+    width:100%;
 }
 
 footer hr{
@@ -1077,4 +1077,10 @@ body                            { padding-top:20px; }
 /* active buttons turn light green-blue*/
 #status-buttons a.active span   {  background:#00BC8C; }
 
+.rupeeIcon {
+    background-image:url("../images/rupee.png");
+}
 
+.ng-table th.text-left {
+    text-align: left;
+}
