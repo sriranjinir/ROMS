@@ -1,0 +1,62 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-6"><h3 class="panel-title">Delivery Address</h3></div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--<div class="col-sm-12">-->
+                <!--{{model.address.Street}}{{model.address.city}}{{model.address.pincode}}-->
+            <!--</div>-->
+            <!--<div class="col-sm-1">-->
+                <!--<input type="checkbox" name="diffAddress" ng-click="showAddress()">-->
+                <!--</div>-->
+            <!--<div class="col-sm-8">-->
+                <!--<label class="col-sm-8 control-label">Check If the above address is not your delivery address</label>-->
+            <!--</div>-->
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="AddressLine1" class="col-sm-2 control-label">Address line 1</label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text"  name="AddressLine1" placeholder="Address line 1"
+                               ng-model="model.address.addressLine1" ng-required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="AddressLine2" class="col-sm-2 control-label">Address line 2</label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text"  name="AddressLine2" placeholder="Address line 2"
+                        ng-model="model.address.addressLine2" ng-required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="City" class="col-sm-2 control-label">City</label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text"  name="City" placeholder="city"
+                               ng-model="model.address.city" ng-required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pincode" class="col-sm-2 control-label">Pincode</label>
+
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text"  name="pincode" placeholder="pincode"
+                               ng-model="model.address.pincode" ng-required="required">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-xs-offset-3">
+                </br></br>
+                <a href="#orders/previewInvoice" class="btn btn-block btn-info" ng-click="goNext()">
+                    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
