@@ -51,6 +51,11 @@ App.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider, $
             templateUrl: 'orders/selectItems.html',
             controller: 'MenuController'
         })
+        .state('orders.selectAddress', {
+            url: '/selectAddress',
+            templateUrl: 'orders/selectAddress.html',
+            controller: 'AddressController'
+        })
 
         // url will be /form/payment
         .state('orders.previewInvoice', {

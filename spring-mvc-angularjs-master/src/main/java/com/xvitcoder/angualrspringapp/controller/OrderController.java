@@ -26,4 +26,8 @@ public class OrderController {
     public String getInvoicePartialPage(ModelMap modelMap) {
         return "orders/previewInvoice";
     }
+    @RequestMapping("/selectAddress")
+    public String getDeliveryAddressPartialPage(ModelMap modelMap) {
+        return "orders/selectAddress";
+    }
 }
