@@ -27,7 +27,7 @@ public class RestaurantController {
     }
 
     @RequestMapping("/layout")
-    public String getCarPartialPage() {
+    public String getRestaurantPartialPage() {
         return "restaurants/layout";
     }
 }
