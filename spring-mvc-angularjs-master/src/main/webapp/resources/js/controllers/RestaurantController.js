@@ -30,7 +30,7 @@ var RestaurantController = function ($scope, $filter, $http, $q,  ngTableParams)
                 $scope.model.restaurants  = data;
 
             var filteredData = params.filter() ?
-                $filter('filter')(data, params.filter()) :
+                $filter('filter')(data, params.filter(), true) :
                 data;
 
             var orderedData = params.sorting() ?
@@ -69,10 +69,6 @@ var RestaurantController = function ($scope, $filter, $http, $q,  ngTableParams)
         return def;
     };
 
-//    $scope.getRestaurants = function () {
-//        return $scope.model.restaurants.tableParams.data;
-//    };
-
     $scope.isSelected = function (id) {
         return $scope.model.restaurant && $scope.model.restaurant.id === id;
     };
@@ -80,11 +76,6 @@ var RestaurantController = function ($scope, $filter, $http, $q,  ngTableParams)
     $scope.select = function (id) {
         $scope.model.restaurant = getRestaurant(id);
     };
-
-//    // Validation: watch to see if $scope.model.selectedSupplierProduct has some value
-//    $scope.$watch('model.restaurant', function () {
-//        $scope.Validator.supplierProduct = !!$scope.model.supplierProduct;
-//    });
 
     var getRestaurant = function (id) {
         return _.find($scope.model.restaurants, function (restaurant) {

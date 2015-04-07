@@ -6,9 +6,10 @@
 package com.xvitcode.angualrspringapp.dao;
 
 import com.xvitcode.angualrspringapp.model.Restaurant;
-import java.util.List;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository("restaurantDao")
-public class RestaurantDaoImpl extends AbstractDao implements RestaurantDao{
+public class RestaurantDaoImpl extends AbstractDao implements RestaurantDao {
 
     public List<Restaurant> findAllRestaurants() {
         @SuppressWarnings("unchecked")

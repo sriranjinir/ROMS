@@ -48,7 +48,11 @@ var MenuController = function ($scope, $filter, $http, $q,  ngTableParams) {
         $scope.model.selectedItems = [];
     }
     $scope.select = function(id) {
-        $scope.model.selectedItems.push(getItem(id));
+       if(! _.find($scope.model.selectedItems, function (item) {
+            return item.id === id;
+        })) {
+           $scope.model.selectedItems.push(getItem(id));
+       }
     };
 
     var getItem = function(id) {

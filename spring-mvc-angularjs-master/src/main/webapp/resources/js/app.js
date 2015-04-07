@@ -10,7 +10,7 @@ App.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider, $
     $stateProvider
         .state('home', {
             url: '/home',
-//            templateUrl: '/home',
+            templateUrl: 'home.html',
             pageId: 'home'
         })
         .state('login', {
