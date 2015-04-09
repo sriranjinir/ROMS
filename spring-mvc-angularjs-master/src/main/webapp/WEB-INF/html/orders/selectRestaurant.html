@@ -18,7 +18,7 @@
                     <td data-title="'Name'" header-class="text-left" sortable="'name'" filter="{'name': 'text'}"> {{prd.name}}</td>
                     <td data-title="'locality'" header-class="text-left" sortable="'locality'" filter="{'locality': 'text'}">{{prd.locality}}</td>
                     <td data-title="'City'"  header-class="text-left" sortable="'city'">{{prd.city}}</td>
-                    <td data-title="'Cuisine'" header-class="text-left" sortable="'cuisine'" ng-select="filterCuisine()" filter-data="cuisines()">{{prd.cuisine}}</td>
+                    <td data-title="'Cuisine'" header-class="text-left" sortable="'cuisine'" ng-select="filterCuisine()" filter="{'cuisine': 'select'}" filter-data="cuisines($column)">{{prd.cuisine}}</td>
                     <td data-title="''" header-class="text-left" filter="{ 'dummy': 'clearFilter' }">
                         <span ng-show="isSelected(prd.id)" class="label label-success status-text">Selected</span>
                     </td>

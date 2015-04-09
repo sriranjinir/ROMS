@@ -19,7 +19,7 @@ var InvoiceController = function ($scope) {
         return 0;
     };
 
-    $scope.submit = function () {
+    $scope.submitt = function () {
       alert("Order submitted successfully");
     };
 

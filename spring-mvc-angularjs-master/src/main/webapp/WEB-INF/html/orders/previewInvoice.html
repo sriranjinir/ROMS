@@ -9,7 +9,7 @@
         <tbody>
         <tr ng-repeat="prd in model.selectedItems" id="{{prd.id}}"
             class="pointer">
-            <td data-title="'Item'" header-class="text-left"> {{prd.name}}</td>
+            <td data-title="'Item'" header-class="text-left"> {{prd.item.name}}</td>
             <td data-title="'Quantity'"  header-class="text-left">{{prd.quantity}}</td>
             <td data-title="'Price'" header-class="text-left">
                 <span class="fa fa-inr"></span>
@@ -32,6 +32,9 @@
     </table>
     <div class="col-xs-6 col-xs-offset-3">
         </br></br>
+        <!--<button class="btn btn-primary" style="float:right; position:relative" ng-click="submitt()"> Submitt <span-->
+                <!--class="glyphicon glyphicon-circle-arrow-right"></span>-->
+        <!--</button>-->
         <a href="#orders/previewInvoice" class="btn btn-block btn-info" onclick="submit()">
             Submit <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </a>
